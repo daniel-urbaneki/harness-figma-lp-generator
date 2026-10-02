@@ -1,0 +1,27 @@
+# Claude Code local settings (specific to each user's machine)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+node_modules/
+dist/
+
+# MCP runtime config (auth/credentials live here — use .mcp.json.example as reference)
+.mcp.json
+
+# Env file (holds Figma PAT and other secrets — never commit)
+.env
+.env.local
+
+# Métricas e dados de auditoria fora da saída final
+projects/**/.audit/
+*.log
+
+# Estado de sessão do hook pre-tool-use (guarda de escopo entre projects/<slug>) — limpo no SessionStart
+.claude/.active-project-slug
+
+# Janela deslizante do throttle da REST do Figma (scripts/lib/figma-http.mjs) — estado de máquina
+.claude/.figma-rate-state.json

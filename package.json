@@ -1,0 +1,45 @@
+{
+  "name": "figma-lp-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "score": "node scripts/compute-composite-score.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p jsconfig.json",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "verify": "npm run lint && npm run typecheck && npm run test && npm run format:check",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0",
+    "puppeteer": "^24.0.0",
+    "sharp": "^0.35.3",
+    "ssim.js": "^3.5.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,css,json,md}": [
+      "prettier --write"
+    ]
+  }
+}

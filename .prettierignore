@@ -1,0 +1,19 @@
+# Third-party vendored assets — never reformat (rules/assets.md: do not modify the original asset)
+projects/**/assets/vendor/**
+
+# Canonical reference artifacts (e.g. the page skeleton in rules/references/estrutura.html) —
+# used as a template to be reproduced. Reformatting here changes what
+# the template generates; same reason as the vendored asset exclusion above (rules/tooling.md section 3).
+.claude/rules/references/**
+
+# Build artifacts
+node_modules/
+dist/
+
+# Audit screenshots/report (binary/generated, outside the final delivery)
+projects/**/.audit/
+
+# Env file — Prettier cannot infer a parser for the KEY=VALUE format and aborts format:check
+.env
+.env.local
+.env.example
